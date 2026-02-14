@@ -1,59 +1,135 @@
-## Title of the Project
-Small description about the project like one below
-The integration of a chatbot within a hostel booking system, aimed at streamlining the reservation process for students and improving the overall user experience.
+## ARCTICOS – AI-Native GPU-Centric Runtime for Compute-Centric Operating Systems
 
-## About
-<!--Detailed Description about the project-->
-Tailored Chatbot for Hostel Booking System is a project designed to integrate a chatbot that leverages advanced natural language processing techniques to understand and respond to user queries to the hostel booking system. Traditional hostel booking processes are often time-consuming and involve manual searches and extensive communication with hostel staff. This project seeks to overcome these challenges by creating an easy-to-use chatbot interface that assists students in addressing inquiries.
+ARCTICOS is a GPU-centric runtime architecture designed to optimize AI and high-performance computing workloads by minimizing CPU–GPU synchronization overhead and enabling accelerator-aware execution above an unmodified Linux operating system.
 
-## Features
-<!--List the features of the project as shown below-->
-- Implements advance neural network method.
-- A framework based application for deployment purpose.
-- High scalability.
-- Less time complexity.
-- A specific scope of Chatbot response model, using json data format.
+### About
 
-## Requirements
-<!--List the requirements of the project as shown below-->
-* Operating System: Requires a 64-bit OS (Windows 10 or Ubuntu) for compatibility with deep learning frameworks.
-* Development Environment: Python 3.6 or later is necessary for coding the sign language detection system.
-* Deep Learning Frameworks: TensorFlow for model training, MediaPipe for hand gesture recognition.
-* Image Processing Libraries: OpenCV is essential for efficient image processing and real-time hand gesture recognition.
-* Version Control: Implementation of Git for collaborative development and effective code management.
-* IDE: Use of VSCode as the Integrated Development Environment for coding, debugging, and version control integration.
-* Additional Dependencies: Includes scikit-learn, TensorFlow (versions 2.4.1), TensorFlow GPU, OpenCV, and Mediapipe for deep learning tasks.
+ARCTICOS (AI-Native Runtime for Compute-Centric Operating Systems) is a research-oriented runtime framework that redefines how operating systems interact with GPUs. Traditional operating systems are CPU-centric, where GPUs are treated as peripheral devices controlled via drivers. This design creates bottlenecks for modern AI and HPC workloads that rely heavily on parallel accelerator execution.
 
-## System Architecture
-<!--Embed the system architecture diagram as shown below-->
+ARCTICOS introduces a layered runtime model that operates above an unmodified Linux OS. It separates responsibilities into:
 
-![Screenshot 2023-11-25 133637](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/a60c11f3-0a11-47fb-ac89-755d5f45c995)
+CPU Control Plane – Responsible for coordination, safety, initialization, and interaction with the Linux kernel.
 
+GPU Data Plane – Responsible for execution scheduling, GPU-owned memory management, and runtime simulation.
 
-## Output
+By reducing repetitive CPU intervention and keeping data resident within accelerator memory, ARCTICOS improves execution locality, scalability, and runtime efficiency for heterogeneous systems.
 
-<!--Embed the Output picture at respective places as shown below as shown below-->
-#### Output1 - Name of the output
+### Features
 
-![Screenshot 2023-11-25 134037](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/8c2b6b5c-5ed2-4ec4-b18e-5b6625402c16)
+GPU-centric runtime execution model
 
-#### Output2 - Name of the output
-![Screenshot 2023-11-25 134253](https://github.com/<<yourusername>>/Hand-Gesture-Recognition-System/assets/75235455/5e05c981-05ca-4aaa-aea2-d918dcf25cb7)
+CPU–GPU control plane separation
 
-Detection Accuracy: 96.7%
-Note: These metrics can be customized based on your actual performance evaluations.
+Scheduler simulation inside GPU runtime
 
+GPU-owned memory management strategy
 
-## Results and Impact
-<!--Give the results and impact as shown below-->
-The Sign Language Detection System enhances accessibility for individuals with hearing and speech impairments, providing a valuable tool for inclusive communication. The project's integration of computer vision and deep learning showcases its potential for intuitive and interactive human-computer interaction.
+Reduced CPU–GPU synchronization overhead
 
-This project serves as a foundation for future developments in assistive technologies and contributes to creating a more inclusive and accessible digital environment.
+Compatibility with unmodified Linux systems
 
-## Articles published / References
-1. N. S. Gupta, S. K. Rout, S. Barik, R. R. Kalangi, and B. Swampa, “Enhancing Heart Disease Prediction Accuracy Through Hybrid Machine Learning Methods ”, EAI Endorsed Trans IoT, vol. 10, Mar. 2024.
-2. A. A. BIN ZAINUDDIN, “Enhancing IoT Security: A Synergy of Machine Learning, Artificial Intelligence, and Blockchain”, Data Science Insights, vol. 2, no. 1, Feb. 2024.
+Designed for AI and HPC workloads
+
+Scalable runtime architecture for heterogeneous systems
+
+### Requirements
+
+Operating System: Ubuntu 20.04 / 22.04 (Linux-based system required)
+
+Hardware: NVIDIA GPU (RTX 3050 or higher recommended)
+
+Programming Language: Rust (for runtime implementation), C/C++ (optional integration)
+
+System Interfaces: Linux system calls, POSIX APIs
+
+GPU Support: CUDA Toolkit / NVIDIA Drivers
+
+Version Control: Git
+
+IDE / Editor: VSCode / CLion / Neovim
 
 
+### Additional Dependencies:
+
+CUDA Runtime
+
+Linux Kernel headers
+
+Cargo (Rust package manager)
+
+Make / GCC toolchain
+
+### System Architecture
+
+The ARCTICOS architecture follows a layered runtime approach:
+
+<img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/0170ad04-f500-408b-b978-459842ae705c" />
 
 
+### Output
+#### Output 1 – Runtime Initialization
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/be6c0c4c-1586-4577-a940-f6d5713bf26b" />
+
+
+### Output 2 – Task Execution Monitoring
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/9acf9a8d-a4ac-4db2-b3cb-ce985c52fb30" />
+
+
+### Performance Metrics (Prototype Evaluation)
+
+<img width="630" height="470" alt="image" src="https://github.com/user-attachments/assets/580bdef5-7055-448b-b054-b1caf489b78b" />
+
+
+Note: Metrics depend on workload characteristics and hardware configuration.
+
+### Results and Impact
+
+ARCTICOS demonstrates that GPUs can be treated as first-class execution platforms at the runtime level without modifying the Linux kernel.
+
+#### Impact:
+
+Reduces CPU bottlenecks in AI/HPC workloads
+
+Improves execution locality and scalability
+
+Enables compute-centric operating system research
+
+Provides foundation for accelerator-native OS architectures
+
+Supports future research in AI-assisted scheduling
+
+ARCTICOS serves as a stepping stone toward accelerator-centric computing environments where GPUs actively participate in runtime decision-making rather than being passively controlled by CPUs.
+
+### Future Enhancements
+
+Multi-GPU runtime coordination
+
+Distributed GPU-aware cluster runtime
+
+AI-driven adaptive scheduling policies
+
+Kernel-level integration (future research direction)
+
+NUMA-aware GPU memory optimization
+
+Integration with containerized AI platforms
+
+### Articles Published / References
+
+S. Kato, M. McThrow, C. Maltzahn, and S. Brandt, “Gdev: First-Class GPU Resource Management in the Operating System,” USENIX ATC, 2012.
+
+L. Zhang et al., “Persistent Kernels for Iterative Memory-Bound GPU Applications,” IEEE/ACM SC, 2018.
+
+J. Veselý et al., “GPU System Calls and System Service Requests,” IEEE ISPASS, 2018.
+
+NVIDIA Corporation, “GPUDirect Technology Overview,” 2019.
+
+O. Kayiran et al., “Managing GPU Concurrency in Heterogeneous Architectures,” MICRO, 2015.
+
+S. Novakovic et al., “Scale-Out NUMA,” ACM SIGARCH CAN, 2014.
+
+J. Zhong and B. He, “Kernelet: High-Throughput GPU Kernel Executions,” IEEE TPDS, 2014.
+
+J. Power et al., “Heterogeneous System Coherence for Integrated CPU–GPU Systems,” MICRO, 2013.
